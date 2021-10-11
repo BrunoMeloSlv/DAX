@@ -1,0 +1,17 @@
+Classe = 
+var 
+salario = Consulta[VALOR SALÁRIO]
+return
+SWITCH(
+        True(),
+        salario < 1000, " K",
+        salario < 2000, " J",
+        salario < 3000, " I",
+        salario < 4000, " H",
+        salario < 5000, " G",
+        salario < 6000, " F",
+        salario < 7000, " E",
+        salario < 8000, " D",
+        salario < 9000, " C",
+        salario < 10000, " B",
+        " A")
