@@ -1,0 +1,11 @@
+Coorte = 
+        SWITCH(
+                TRUE(),
+                Consulta[IDADE] < 30, "01 - ATÉ 29 ANOS",
+                Consulta[IDADE] < 40, "02 - 30 - 39 ANOS",
+                Consulta[IDADE] < 50 ,"03 - 40 - 49 ANOS ",
+                Consulta[IDADE] < 56, "04 - 50 - 55 ANOS",
+                Consulta[IDADE] < 61, "05 - 56 - 60 ANOS",
+                Consulta[IDADE] < 66, "06 - 61 - 65 ANOS",
+                Consulta[IDADE] < 71, "07 - 66 - 70 ANOS",
+                "08 - ACIMA DE 70")
