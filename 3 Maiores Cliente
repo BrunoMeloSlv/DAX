@@ -1,0 +1,21 @@
+3 Maiores Cliente = 
+Var Top3clientes = 
+ADDCOLUMNS(
+    TOPN(
+        3,
+        VALUES(TbClientes[Cliente]),
+        [Soma Vendas],
+        DESC
+    ),
+    "Soma Venda",
+    [Soma Vendas]
+)
+
+Return
+CONCATENATEX(
+    Top3clientes,
+    FORMAT([Soma Venda], "0,00") & " (" & TbClientes[Cliente] & ")",
+    " * ",
+    [Soma Venda],
+    DESC
+    )
