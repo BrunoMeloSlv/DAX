@@ -8,7 +8,7 @@ CALCULATETABLE(
             Calendario[Ano],
             Calendario[Nome do Mês]
         ),
-        "Média",
+        "Medida",
         Medidas[Soma Vendas]
     ),
     ALLSELECTED()
