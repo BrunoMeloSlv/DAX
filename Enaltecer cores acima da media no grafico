@@ -1,0 +1,22 @@
+Destaque de Médias = 
+VAR DestaqueCor = "#0D6ABF"
+VAR TabelaValores = 
+CALCULATETABLE(
+    ADDCOLUMNS(
+        SUMMARIZE(
+            Vendas,
+            Calendario[Ano],
+            Calendario[Nome do Mês]
+        ),
+        "Média",
+        Medidas[Soma Vendas]
+    ),
+    ALLSELECTED()
+)
+VAR ValorAtual = Medidas[Soma Vendas]
+VAR ValorMedio = AVERAGEX(TabelaValores,[Média])
+
+Return
+SWITCH(
+    TRUE(),
+    ValorAtual > ValorMedio,DestaqueCor)
