@@ -1,0 +1,26 @@
+Destaque Maior e Menor = 
+VAR Maior = "#0D6ABF"
+VAR Menor = "#FFAF19"
+VAR TabelaValores = 
+CALCULATETABLE(
+    ADDCOLUMNS(
+        SUMMARIZE(
+            Vendas,
+            Calendario[Ano],
+            Calendario[Nome do Mês]
+        ),
+        "Medida",
+        Medidas[Soma Vendas]
+    ),
+    ALLSELECTED()
+)
+VAR ValorAtual = Medidas[Soma Vendas]
+VAR MaiorValor = MAXX(TabelaValores,[Medida])
+VAR MenorValor = MINX(TabelaValores,[Medida])
+
+Return
+SWITCH(
+    TRUE(),
+    ValorAtual = MaiorValor, Maior ,
+    ValorAtual = MenorValor, Menor
+    )
